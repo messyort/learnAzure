@@ -1,4 +1,35 @@
 1.***Azure AD 角色和经典订阅管理员角色如何关联的高级视图。
-https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles
+i.https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles
+ii.https://learn.microsoft.com/en-us/azure/role-based-access-control/role-definitions
+{
+  "Name": "Contributor",
+  //"id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+  "Id": "b24988ac-6180-42a0-ab88-20f7382dd24c",       //role 的唯一标示。猜测匹配roleassignment里的definitionid
+  "IsCustom": false,
+  "Description": "Lets you manage everything except access to resources.",
+  "Actions": [
+    "*"
+  ],
+  "NotActions": [
+    "Microsoft.Authorization/*/Delete",
+    "Microsoft.Authorization/*/Write",
+    "Microsoft.Authorization/elevateAccess/Action",
+    "Microsoft.Blueprint/blueprintAssignments/write",
+    "Microsoft.Blueprint/blueprintAssignments/delete"
+  ],
+  "DataActions": [],
+  "NotDataActions": [],
+  "AssignableScopes": [
+    "/"
+  ]
+}
+iii.https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments
+
+
 2.***reset api
 https://learn.microsoft.com/en-us/rest/api/authorization/role-assignments
+
+
+https://learn.microsoft.com/en-us/rest/api/authorization/role-assignments/list-for-resource?tabs=HTTP
+
+one resource will get different scope of role-defination. so what should I display
